@@ -6,7 +6,9 @@ const paragraphs = [
     "If a prediction is right, then it's like you only have one future. Like that future has been decided. But if it's wrong, then you have an almost infinite number of possibilities... I want to believe that I have choices - that the path I walk has many different turns, and many different roads to follow!",
     "The loneliest people are the kindest. The saddest people smile the brightest. The most damaged people are the wisest. All because they don't wish to see anyone else suffer the way they did.",
     "Fear is not evil. It tells you what weakness is. And once you know your weakness, you can become stronger as well as kinder.",
-    "Whatever you lose, you'll find it again. But what you throw away you'll never get back."
+    "Whatever you lose, you'll find it again. But what you throw away you'll never get back.",
+    "I've heard of this before. There's a should be forgettable movie that talks about it. About how humans only use approximately ten percent of their brain capacity. Basically if humans weren't so lazy they would be able to have superpowers. All they have to do is try. Such potential killed by inherent laziness. I can't forgive that.",
+    "Most people don't try to become adults. They just reach a point where they realize they can's stay children any longer."
 ];
 
 const typingText = document.querySelector(".typing-text p")
@@ -25,6 +27,8 @@ let charIndex = mistakes = isTyping = 0;
 function loadParagraph() {
     const ranIndex = Math.floor(Math.random() * paragraphs.length);
     typingText.innerHTML = "";
+    typingText.style.wordBreak = "break-all";
+    typingText.style.wordWrap = "break-word";
     paragraphs[ranIndex].split("").forEach(char => {
         console.log(char);
         let span = `<span>${char}</span>`
